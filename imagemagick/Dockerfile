@@ -9,5 +9,5 @@ ARG USER
 ENV USER ${USER}
 RUN groupadd -r $USER && useradd --no-log-init -r -g $USER $USER
 WORKDIR /home/$USER
-USER $USER
-CMD [ "mogrify" ]
+#USER $USER
+ENTRYPOINT [ "mogrify" ]
