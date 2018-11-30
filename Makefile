@@ -1,9 +1,15 @@
 BASE := debian
 BASE_TAG := stretch-slim
 DOCKER_USER := bryce
+IMAGES := $(dir $(wildcard */.))
 IMAGE := ""
 
-$(IMAGE):
+all: $(IMAGES)
+	@for dockerfile in $^ ; do \
+		echo doing a make build $$dockerfile ; \
+    done
+
+build:
 	docker build \
 		-t $(IMAGE) \
 		--build-arg BASE=$(BASE) \
