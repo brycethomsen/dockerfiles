@@ -10,9 +10,5 @@ RUN groupadd -r $USER && useradd --no-log-init -r -g $USER $USER && \
     rm -rf /var/lib/apt/lists/ && \
     chown -R $USER:$USER /home/$USER
 WORKDIR /home/$USER
-<<<<<<< HEAD
 USER $USER
-=======
-#USER $USER
->>>>>>> 6163ba76756ee5f076b39d08a87053cf5fec59a6
 ENTRYPOINT [ "mogrify" ]
